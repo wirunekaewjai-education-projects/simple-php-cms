@@ -9,15 +9,13 @@ class Auth
             return false;
         }
 
-        $users = User::select("`username` = '$username'", '', '', '', '');
-        if(sizeof($users) > 0)
+        $encoded = md5($password);
+        $where = "`username` = '$username' AND `password` = '$encoded'";
+        if(sizeof(User::select($where, '', '', '', '')) > 0)
         {
-            if(md5($password) === $users[0]->password)
-            {
-                $credential = base64_encode($username . ':' . $password);
-                Cookie::set('credential', $credential, 30);
-                return true;
-            }
+            $credential = base64_encode($username . ':' . $password);
+            Cookie::set('credential', $credential, 30);
+            return true;
         }
 
         return false;
