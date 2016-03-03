@@ -4,7 +4,7 @@ class User
 {
     public $id;
     public $username;
-    public $password;
+    //public $password;
     public $email;
     public $created_date;
 
@@ -21,7 +21,7 @@ class User
             $obj = new User();
             $obj->id = intval($item['id']);
             $obj->username = $item['username'];
-            $obj->password = $item['password'];
+            //$obj->password = $item['password'];
             $obj->email = $item['email'];
             $obj->created_date = $item['created_date'];
 
