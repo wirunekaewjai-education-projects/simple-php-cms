@@ -10,7 +10,8 @@ class User
 
     public static function select($whereClause, $orderby, $order, $limit, $offset)
     {
-        $sql = DB::select('users', $whereClause, $orderby, $order, $limit, $offset);
+        $fields = '`id`, `username`, `email`, `created_date`';
+        $sql = DB::select('users', $fields, $whereClause, $orderby, $order, $limit, $offset);
 
         $assoc = DB::query_assoc($sql);
         $arr = [];

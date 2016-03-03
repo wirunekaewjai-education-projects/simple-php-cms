@@ -75,9 +75,9 @@ class DB
     }
 
 
-    public static function select($table, $whereClause, $orderby, $order, $limit, $offset)
+    public static function select($table, $fields, $whereClause, $orderby, $order, $limit, $offset)
     {
-        $sql = "SELECT * FROM `$table`";
+        $sql = "SELECT $fields FROM `$table`";
 
         if($whereClause)
         {

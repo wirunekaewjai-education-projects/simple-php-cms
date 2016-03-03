@@ -10,7 +10,7 @@ class Post
 
     public static function select($whereClause, $orderby, $order, $limit, $offset)
     {
-        $sql = DB::select('posts', $whereClause, $orderby, $order, $limit, $offset);
+        $sql = DB::select('posts', '*', $whereClause, $orderby, $order, $limit, $offset);
 
         $assoc = DB::query_assoc($sql);
         $arr = [];
