@@ -1,0 +1,21 @@
+
+.td-checkbox
+{
+    text-align: center;
+    width: 20px;
+}
+
+.td-clickable
+{
+    cursor: pointer;
+}
+
+.padding-box
+{
+    padding: 32px;
+}
+
+.btn-fullwidth
+{
+    width: 100%;
+}
